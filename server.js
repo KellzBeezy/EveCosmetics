@@ -27,6 +27,6 @@ app.get;
 app.listen(port, async () => {
   console.log(`up and running on port ${port}`);
   await sequelize.sync({
-    /*force: true,*/
+    force: true,
   });
 });
