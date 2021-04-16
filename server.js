@@ -1,5 +1,4 @@
 const express = require("express");
-const Sequelize = require("sequelize");
 const { sequelize } = require("./models");
 const app = express();
 var cors = require("cors");
