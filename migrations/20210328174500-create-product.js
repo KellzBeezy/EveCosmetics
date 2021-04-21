@@ -20,6 +20,18 @@ module.exports = {
         type: Sequelize.INTEGER,
         allowNull: false,
       },
+      remaining: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+      },
+      capital: {
+        type: Sequelize.DECIMAL(10, 2),
+        allowNull: false,
+      },
+      revenue: {
+        type: Sequelize.DECIMAL(10, 2),
+        allowNull: false,
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE,

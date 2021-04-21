@@ -65,12 +65,13 @@ router.route("/product/:id").get(async (req, res) => {
   */
 
 router.route("/product").post(async (req, res) => {
-  const { capital, productName, quantity, remaining } = req.body;
+  const { capital, productName, quantity, remaining, revenue } = req.body;
   try {
     const products = await Product.create({
       capital,
       productName,
       remaining,
+      revenue,
       quantityOrdered: quantity,
     });
     return res.status(200).json(products);
@@ -122,7 +123,7 @@ router.route("/product/:id").delete(async (req, res) => {
 
 router.route("/product/:id").put(async (req, res) => {
   try {
-    const { profit, product, remaining } = req.body;
+    const { profit, product, remaining, revenue } = req.body;
     const { id } = req.params;
     const products = await Product.findOne({
       where: { id },
@@ -131,6 +132,7 @@ router.route("/product/:id").put(async (req, res) => {
     products.productName = product;
     products.profit = profit;
     products.remaining = remaining;
+    products.revenue = revenue;
 
     await products.save();
 

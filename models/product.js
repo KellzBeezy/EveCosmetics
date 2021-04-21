@@ -34,6 +34,10 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.DECIMAL(10, 2),
         allowNull: false,
       },
+      revenue: {
+        type: DataTypes.DECIMAL(10, 2),
+        allowNull: false,
+      },
       profit: {
         type: DataTypes.DECIMAL(10, 2),
         allowNull: true,
